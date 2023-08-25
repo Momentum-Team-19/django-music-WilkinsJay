@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django Music</title>
 </head>
-<h1>Album List</h1>
-<ul>
-    {% for album in albums %}
-    <h1><a href="{% url 'album_detail' pk=album.pk %}">{{ album.title }}</a></h1>
-    <h2>by: {{ album.artist }}</h2>
-    {% endfor %}
-</ul>
 
 <body>
-
+    <h1>Album List</h1>
+    <ul>
+        {% for album in albums %}
+        <h1><a href="{% url 'album_detail' pk=album.pk %}">{{ album.title }}</a></h1>
+        <h2>by: {{ album.artist }}</h2>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'album_new' %}">Add New Album</a>
 </body>
 
 </html>
